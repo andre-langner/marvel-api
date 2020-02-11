@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 8
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: stories_comics
+            columns:
+              - column:
+                  name: story_comic_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: story_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: 7ced65e8-fe55-4692-9663-d9f41a3a85b5
+                    references: stories(story_id)
+              - column:
+                  name: comic_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: 57e5d150-6a33-4e64-b87d-78edf3b4cf2d
+                    references: comics(comic_id)
+              - column:
+                  name: original
+                  type: boolean

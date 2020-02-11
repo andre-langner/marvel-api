@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 14
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: texts
+            columns:
+              - column:
+                  name: text_id
+                  type: integer
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: comic_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: 3bf63bb6-83ef-4486-94a8-9eb955f8fa75
+                    references: comics(comic_id)
+              - column:
+                  name: type
+                  type: varchar(20)
+              - column:
+                  name: text
+                  type: text

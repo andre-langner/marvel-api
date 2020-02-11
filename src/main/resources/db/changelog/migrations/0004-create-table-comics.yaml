@@ -1,0 +1,64 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: comics
+            columns:
+              - column:
+                  name: comic_id
+                  type: integer
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: serie_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: 785fe3f6-0ee4-43e1-aeef-36cbe512b316
+                    references: series(serie_id)
+              - column:
+                  name: digital_id
+                  type: integer
+              - column:
+                  name: title
+                  type: varchar(255)
+              - column:
+                  name: issue_number
+                  type: integer
+              - column:
+                  name: variant_description
+                  type: text
+              - column:
+                  name: description
+                  type: text
+              - column:
+                  name: modified
+                  type: datetime
+              - column:
+                  name: isbn
+                  type: text
+              - column:
+                  name: upc
+                  type: text
+              - column:
+                  name: diamond_code
+                  type: text
+              - column:
+                  name: ean
+                  type: text
+              - column:
+                  name: issn
+                  type: text
+              - column:
+                  name: format
+                  type: varchar(60)
+              - column:
+                  name: page_count
+                  type: integer
+              - column:
+                  name: thumbnail_path
+                  type: text
+              - column:
+                  name: thumbnail_extension
+                  type: varchar(3)

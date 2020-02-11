@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1001
+      author: andre.langner
+      changes:
+        - loadData:
+            tableName: creators
+            relativeToChangelogFile: true
+            file: ../initial_data/creators.csv
+            separator: ','
+            columns:
+              - column:
+                  name: creator_id
+                  type: NUMERIC
+              - column:
+                  name: first_name
+                  type: STRING
+              - column:
+                  name: middle_name
+                  type: STRING
+              - column:
+                  name: last_name
+                  type: STRING
+              - column:
+                  name: suffix
+                  type: STRING
+              - column:
+                  name: modified
+                  type: DATE
+              - column:
+                  name: thumbnail_path
+                  type: STRING
+              - column:
+                  name: thumbnail_extension
+                  type: STRING

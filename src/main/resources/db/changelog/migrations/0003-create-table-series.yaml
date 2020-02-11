@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: series
+            columns:
+              - column:
+                  name: serie_id
+                  type: integer
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: next_serie_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: f1a5dfbc-7cdc-414e-8338-ced697d6907c
+                    references: series(serie_id)
+              - column:
+                  name: previous_serie_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: c2aefad4-bfcf-459a-bf8d-de762741d12c
+                    references: series(serie_id)
+              - column:
+                  name: title
+                  type: varchar(255)
+              - column:
+                  name: description
+                  type: text
+              - column:
+                  name: start_year
+                  type: int
+              - column:
+                  name: end_year
+                  type: int
+              - column:
+                  name: rating
+                  type: int
+              - column:
+                  name: modified
+                  type: datetime
+              - column:
+                  name: thumbnail_path
+                  type: text
+              - column:
+                  name: thumbnail_extension
+                  type: varchar(3)

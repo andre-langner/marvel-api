@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 14
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: dates
+            columns:
+              - column:
+                  name: date_id
+                  type: integer
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: comic_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: 517b05e9-dc41-490a-a939-8280b32c9b2a
+                    references: comics(comic_id)
+              - column:
+                  name: type
+                  type: varchar(20)
+              - column:
+                  name: date
+                  type: datetime

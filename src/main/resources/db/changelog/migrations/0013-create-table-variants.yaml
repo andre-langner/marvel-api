@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 13
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: variants
+            columns:
+              - column:
+                  name: variant_id
+                  type: integer
+                  constraints:
+                    primaryKey: true
+                    foreignKeyName: 5e32862b-0e47-4aa8-8bd3-db5e6ea086cc
+                    references: comics(comic_id)
+              - column:
+                  name: comic_id
+                  type: integer
+                  constraints:
+                    primaryKey: true
+                    foreignKeyName: e2ebeba5-13d4-4032-800a-2de63d906a18
+                    references: comics(comic_id)

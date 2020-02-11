@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 14
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: prices
+            columns:
+              - column:
+                  name: prices_id
+                  type: integer
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: comic_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: ff5c9348-e10d-46d3-baed-3c4b78105271
+                    references: comics(comic_id)
+              - column:
+                  name: type
+                  type: varchar(20)
+              - column:
+                  name: price
+                  type: decimal(15,2)
