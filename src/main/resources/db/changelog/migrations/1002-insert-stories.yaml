@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1002
+      author: andre.langner
+      changes:
+        - loadData:
+            tableName: stories
+            relativeToChangelogFile: true
+            file: ../initial_data/stories.csv
+            separator: ','
+            quotchar: '"'
+            columns:
+              - column:
+                  name: story_id
+                  type: NUMERIC
+              - column:
+                  name: title
+                  type: STRING
+              - column:
+                  name: description
+                  type: STRING
+              - column:
+                  name: type
+                  type: STRING
+              - column:
+                  name: modified
+                  type: DATE
+              - column:
+                  name: start
+                  type: DATE
+              - column:
+                  name: end
+                  type: DATE
+              - column:
+                  name: thumbnail_path
+                  type: STRING
+              - column:
+                  name: thumbnail_extension
+                  type: STRING

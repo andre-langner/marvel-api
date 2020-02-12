@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1005
+      author: andre.langner
+      changes:
+        - loadData:
+            tableName: characters_stories
+            relativeToChangelogFile: true
+            file: ../initial_data/characters_stories.csv
+            separator: ','
+            quotchar: '"'
+            columns:
+              - column:
+                  name: character_id
+                  type: NUMERIC
+              - column:
+                  name: story_id
+                  type: NUMERIC

@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1004
+      author: andre.langner
+      changes:
+        - loadData:
+            tableName: characters
+            relativeToChangelogFile: true
+            file: ../initial_data/characters.csv
+            separator: ','
+            quotchar: '"'
+            columns:
+              - column:
+                  name: character_id
+                  type: NUMERIC
+              - column:
+                  name: name
+                  type: STRING
+              - column:
+                  name: description
+                  type: STRING
+              - column:
+                  name: modified
+                  type: DATE
+              - column:
+                  name: thumbnail_path
+                  type: STRING
+              - column:
+                  name: thumbnail_extension
+                  type: STRING

@@ -1,0 +1,66 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1008
+      author: andre.langner
+      changes:
+        - loadData:
+            tableName: events
+            relativeToChangelogFile: true
+            file: ../initial_data/events.csv
+            separator: ','
+            quotchar: '"'
+            columns:
+              - column:
+                  name: event_id
+                  type: NUMERIC
+              - column:
+                  name: title
+                  type: STRING
+              - column:
+                  name: description
+                  type: STRING
+              - column:
+                  name: start
+                  type: DATE
+              - column:
+                  name: end
+                  type: DATE
+              - column:
+                  name: modified
+                  type: DATE
+              - column:
+                  name: thumbnail_path
+                  type: STRING
+              - column:
+                  name: thumbnail_extension
+                  type: STRING
+        - loadUpdateData:
+            tableName: events
+            onlyUpdate: true
+            primaryKey: event_id
+            relativeToChangelogFile: true
+            file: ../initial_data/events_next.csv
+            separator: ','
+            quotchar: '"'
+            columns:
+              - column:
+                  name: event_id
+                  type: NUMERIC
+              - column:
+                  name: next_event_id
+                  type: NUMERIC
+        - loadUpdateData:
+            tableName: events
+            relativeToChangelogFile: true
+            file: ../initial_data/events_previous.csv
+            onlyUpdate: true
+            separator: ','
+            quotchar: '"'
+            primaryKey: event_id
+            columns:
+              - column:
+                  name: event_id
+                  type: NUMERIC
+              - column:
+                  name: previous_event_id
+                  type: NUMERIC

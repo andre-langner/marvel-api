@@ -39,6 +39,9 @@ databaseChangeLog:
                   name: rating
                   type: int
               - column:
+                  name: type
+                  type: varchar(30)
+              - column:
                   name: modified
                   type: datetime
               - column:

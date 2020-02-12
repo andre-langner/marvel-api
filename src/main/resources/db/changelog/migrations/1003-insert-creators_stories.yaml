@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1003
+      author: andre.langner
+      changes:
+        - loadData:
+            tableName: creators_stories
+            relativeToChangelogFile: true
+            file: ../initial_data/creators_stories.csv
+            separator: ','
+            quotchar: '"'
+            columns:
+              - column:
+                  name: creator_story_id
+                  type: STRING
+              - column:
+                  name: story_id
+                  type: NUMERIC
+              - column:
+                  name: creator_id
+                  type: NUMERIC
+              - column:
+                  name: role
+                  type: STRING

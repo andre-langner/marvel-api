@@ -8,6 +8,7 @@ databaseChangeLog:
             relativeToChangelogFile: true
             file: ../initial_data/creators.csv
             separator: ','
+            quotchar: '"'
             columns:
               - column:
                   name: creator_id

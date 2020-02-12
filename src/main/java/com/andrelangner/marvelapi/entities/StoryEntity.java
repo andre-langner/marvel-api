@@ -21,17 +21,11 @@ public class StoryEntity {
   @Column(name = "description")
   private String description;
 
-  @Column(name = "type", length = 20)
+  @Column(name = "type", length = 30)
   private String type;
 
   @Column(name = "modified")
   private Date modified;
-
-  @Column(name = "start")
-  private Date start;
-
-  @Column(name = "end")
-  private Date end;
 
   @Column(name = "thumbnail_path")
   private String thumbnailPath;
@@ -44,4 +38,7 @@ public class StoryEntity {
 
   @OneToMany(mappedBy = "creator")
   private Set<CreatorStoryEntity> creators;
+
+  @ManyToMany(mappedBy = "stories")
+  private Set<CharacterEntity> characters;
 }

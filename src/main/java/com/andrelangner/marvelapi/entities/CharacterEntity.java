@@ -32,8 +32,8 @@ public class CharacterEntity {
 
   @ManyToMany
   @JoinTable(
-      name = "characters_comics",
+      name = "characters_stories",
       joinColumns = @JoinColumn(name = "character_id"),
-      inverseJoinColumns = @JoinColumn(name = "comic_id"))
-  private Set<ComicEntity> comics;
+      inverseJoinColumns = @JoinColumn(name = "story_id"))
+  private Set<StoryEntity> stories;
 }

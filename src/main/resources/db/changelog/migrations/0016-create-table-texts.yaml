@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 14
+      id: 16
       author: andre.langner
       changes:
         - createTable:
@@ -19,7 +19,7 @@ databaseChangeLog:
                     references: comics(comic_id)
               - column:
                   name: type
-                  type: varchar(20)
+                  type: varchar(30)
               - column:
                   name: text
                   type: text

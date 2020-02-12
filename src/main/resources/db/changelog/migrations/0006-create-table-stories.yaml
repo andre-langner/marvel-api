@@ -19,15 +19,9 @@ databaseChangeLog:
                   type: text
               - column:
                   name: type
-                  type: varchar(20)
+                  type: varchar(30)
               - column:
                   name: modified
-                  type: datetime
-              - column:
-                  name: start
-                  type: datetime
-              - column:
-                  name: end
                   type: datetime
               - column:
                   name: thumbnail_path

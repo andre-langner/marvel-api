@@ -46,4 +46,7 @@ public class EventEntity {
 
   @ManyToMany(mappedBy = "events")
   private Set<ComicEntity> comics;
+
+  @OneToMany(mappedBy = "event")
+  private Set<EventUrlEntity> urls;
 }

@@ -24,7 +24,7 @@ public class CreatorEntity {
   @Column(name = "last_name")
   private String lastName;
 
-  @Column(name = "suffix", length = 20)
+  @Column(name = "suffix", length = 30)
   private String suffix;
 
   @Column(name = "modified")

@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1006
+      author: andre.langner
+      changes:
+        - loadData:
+            tableName: series_urls
+            relativeToChangelogFile: true
+            file: ../initial_data/series_url.csv
+            separator: ','
+            quotchar: '"'
+            columns:
+              - column:
+                  name: serie_url_id
+                  type: STRING
+              - column:
+                  name: serie_id
+                  type: NUMERIC
+              - column:
+                  name: type
+                  type: STRING
+              - column:
+                  name: url
+                  type: STRING

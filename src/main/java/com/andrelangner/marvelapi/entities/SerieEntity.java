@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Data
@@ -37,6 +38,9 @@ public class SerieEntity {
   @Column(name = "rating")
   private Long rating;
 
+  @Column(name = "type", length = 30)
+  private String type;
+
   @Column(name = "modified")
   private Date modified;
 
@@ -45,4 +49,7 @@ public class SerieEntity {
 
   @Column(name = "thumbnail_extension", length = 3)
   private String thumbnailExtension;
+
+  @OneToMany(mappedBy = "serie")
+  private Set<SerieUrlEntity> urls;
 }

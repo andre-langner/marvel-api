@@ -8,7 +8,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: prices_id
-                  type: integer
+                  type: UUID
                   constraints:
                     primaryKey: true
               - column:
@@ -19,7 +19,7 @@ databaseChangeLog:
                     references: comics(comic_id)
               - column:
                   name: type
-                  type: varchar(20)
+                  type: varchar(30)
               - column:
                   name: price
                   type: decimal(15,2)

@@ -97,9 +97,6 @@ public class ComicEntity {
   @OneToMany(mappedBy = "comic")
   private Set<DateEntity> dates;
 
-  @ManyToMany(mappedBy = "comics")
-  private Set<CharacterEntity> characters;
-
   @OneToMany(mappedBy = "story")
   private Set<StoryComicEntity> stories;
 

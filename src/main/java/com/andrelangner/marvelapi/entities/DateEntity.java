@@ -19,7 +19,7 @@ public class DateEntity {
   @JoinColumn(name = "comic_id")
   private ComicEntity comic;
 
-  @Column(name = "type", length = 20)
+  @Column(name = "type", length = 30)
   private String type;
 
   @Column(name = "date")

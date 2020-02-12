@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1009
+      author: andre.langner
+      changes:
+        - loadData:
+            tableName: events_urls
+            relativeToChangelogFile: true
+            file: ../initial_data/events_url.csv
+            separator: ','
+            quotchar: '"'
+            columns:
+              - column:
+                  name: event_url_id
+                  type: STRING
+              - column:
+                  name: event_id
+                  type: NUMERIC
+              - column:
+                  name: type
+                  type: STRING
+              - column:
+                  name: url
+                  type: STRING
