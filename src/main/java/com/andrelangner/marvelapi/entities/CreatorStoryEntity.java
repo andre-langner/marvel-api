@@ -16,11 +16,11 @@ public class CreatorStoryEntity {
   private UUID id;
 
   @JoinColumn(name = "story_id")
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   private StoryEntity story;
 
   @JoinColumn(name = "creator_id")
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   private CreatorEntity creator;
 
   @Column(name = "role")

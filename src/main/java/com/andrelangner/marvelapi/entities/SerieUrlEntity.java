@@ -14,7 +14,7 @@ public class SerieUrlEntity {
   @Column(name = "serie_url_id")
   private UUID id;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "serie_id")
   private SerieEntity serie;
 

@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 19
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: images
+            columns:
+              - column:
+                  name: image_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: comic_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: 0d2cab14-c8f7-49f8-8e3d-3e5b3725621f
+                    references: comics(comic_id)
+              - column:
+                  name: path
+                  type: text
+              - column:
+                  name: extension
+                  type: varchar(3)

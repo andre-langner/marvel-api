@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 18
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: events_urls
+            columns:
+              - column:
+                  name: event_url_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: event_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: f05564d7-8509-481b-a995-15a3e1e02a46
+                    references: events(event_id)
+              - column:
+                  name: type
+                  type: varchar(30)
+              - column:
+                  name: url
+                  type: text

@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -13,9 +14,9 @@ public class DateEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "date_id")
-  private Long id;
+  private UUID id;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "comic_id")
   private ComicEntity comic;
 

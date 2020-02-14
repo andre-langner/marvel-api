@@ -1,0 +1,15 @@
+stories:
+  - description: description test
+    modified: 1969-12-31 19:00:00
+    story_id: 7
+    thumbnail_extension: jpg
+    thumbnail_path: http://teste
+    title: Teste 1
+    type: story
+  - description: description test 2
+    modified: 2000-12-31 19:00:00
+    story_id: 8
+    thumbnail_extension: jpg
+    thumbnail_path: http://teste
+    title: Teste 2
+    type: story

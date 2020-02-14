@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: characters
+            columns:
+              - column:
+                  name: character_id
+                  type: integer
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: description
+                  type: text
+              - column:
+                  name: modified
+                  type: datetime
+              - column:
+                  name: thumbnail_path
+                  type: text
+              - column:
+                  name: thumbnail_extension
+                  type: varchar(3)

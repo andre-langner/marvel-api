@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 17
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: series_urls
+            columns:
+              - column:
+                  name: serie_url_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: serie_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: ee7732e7-7ddb-4272-9de9-b3a54ce3cf7c
+                    references: series(serie_id)
+              - column:
+                  name: type
+                  type: varchar(30)
+              - column:
+                  name: url
+                  type: text

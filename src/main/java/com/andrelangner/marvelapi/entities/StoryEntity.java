@@ -33,12 +33,12 @@ public class StoryEntity {
   @Column(name = "thumbnail_extension", length = 3)
   private String thumbnailExtension;
 
-  @OneToMany(mappedBy = "comic")
+  @OneToMany(mappedBy = "comic", fetch = FetchType.LAZY)
   private Set<StoryComicEntity> comics;
 
-  @OneToMany(mappedBy = "creator")
+  @OneToMany(mappedBy = "creator", fetch = FetchType.LAZY)
   private Set<CreatorStoryEntity> creators;
 
-  @ManyToMany(mappedBy = "stories")
+  @ManyToMany(mappedBy = "stories", fetch = FetchType.LAZY)
   private Set<CharacterEntity> characters;
 }

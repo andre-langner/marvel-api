@@ -44,9 +44,9 @@ public class EventEntity {
   @Column(name = "thumbnail_extension", length = 3)
   private String thumbnailExtension;
 
-  @ManyToMany(mappedBy = "events")
+  @ManyToMany(mappedBy = "events", fetch = FetchType.LAZY)
   private Set<ComicEntity> comics;
 
-  @OneToMany(mappedBy = "event")
+  @OneToMany(mappedBy = "event", fetch = FetchType.LAZY)
   private Set<EventUrlEntity> urls;
 }

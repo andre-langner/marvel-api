@@ -14,7 +14,7 @@ public class EventUrlEntity {
   @Column(name = "event_url_id")
   private UUID id;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "event_id")
   private EventEntity event;
 

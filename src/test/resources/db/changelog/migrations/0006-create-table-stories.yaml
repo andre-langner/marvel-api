@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: stories
+            columns:
+              - column:
+                  name: story_id
+                  type: integer
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: title
+                  type: varchar(255)
+              - column:
+                  name: description
+                  type: text
+              - column:
+                  name: type
+                  type: varchar(30)
+              - column:
+                  name: modified
+                  type: datetime
+              - column:
+                  name: thumbnail_path
+                  type: text
+              - column:
+                  name: thumbnail_extension
+                  type: varchar(3)

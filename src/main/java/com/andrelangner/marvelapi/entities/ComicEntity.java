@@ -17,7 +17,7 @@ public class ComicEntity {
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "serie_id")
-  private SerieEntity serieEntity;
+  private SerieEntity serie;
 
   @JoinColumn(name = "digital_id")
   private Long digitalId;
@@ -29,16 +29,10 @@ public class ComicEntity {
   private Long issueNumber;
 
   @Column(name = "variant_description")
-  private Long variantDescription;
+  private String variantDescription;
 
   @Column(name = "description")
   private String description;
-
-  @Column(name = "end_year")
-  private Long endYear;
-
-  @Column(name = "rating")
-  private Long rating;
 
   @Column(name = "modified")
   private Date modified;
@@ -70,37 +64,37 @@ public class ComicEntity {
   @Column(name = "thumbnail_extension", length = 3)
   private String thumbnailExtension;
 
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(
           name = "collections",
           joinColumns = @JoinColumn(name = "comic_id"),
           inverseJoinColumns = @JoinColumn(name = "collection_id"))
   private Set<ComicEntity> collections;
 
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(
           name = "issues",
           joinColumns = @JoinColumn(name = "comic_id"),
           inverseJoinColumns = @JoinColumn(name = "issue_id"))
   private Set<ComicEntity> issues;
 
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(
           name = "variants",
           joinColumns = @JoinColumn(name = "comic_id"),
           inverseJoinColumns = @JoinColumn(name = "variant_id"))
   private Set<ComicEntity> variants;
 
-  @OneToMany(mappedBy = "comic")
+  @OneToMany(mappedBy = "comic", fetch = FetchType.LAZY)
   private Set<PriceEntity> prices;
 
-  @OneToMany(mappedBy = "comic")
+  @OneToMany(mappedBy = "comic", fetch = FetchType.LAZY)
   private Set<DateEntity> dates;
 
-  @OneToMany(mappedBy = "story")
+  @OneToMany(mappedBy = "story", fetch = FetchType.LAZY)
   private Set<StoryComicEntity> stories;
 
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(
           name = "events_comics",
           joinColumns = @JoinColumn(name = "comic_id"),

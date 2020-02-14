@@ -16,11 +16,11 @@ public class StoryComicEntity {
   private UUID id;
 
   @JoinColumn(name = "story_id")
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   private StoryEntity story;
 
   @JoinColumn(name = "comic_id")
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   private ComicEntity comic;
 
   @Column(name = "original")

@@ -30,7 +30,7 @@ public class CharacterEntity {
   @Column(name = "thumbnail_extension", length = 3)
   private String thumbnailExtension;
 
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(
       name = "characters_stories",
       joinColumns = @JoinColumn(name = "character_id"),

@@ -50,6 +50,9 @@ public class SerieEntity {
   @Column(name = "thumbnail_extension", length = 3)
   private String thumbnailExtension;
 
-  @OneToMany(mappedBy = "serie")
+  @OneToMany(mappedBy = "serie", fetch = FetchType.LAZY)
   private Set<SerieUrlEntity> urls;
+
+  @OneToMany(mappedBy = "serie", fetch = FetchType.LAZY)
+  private Set<ComicEntity> comics;
 }

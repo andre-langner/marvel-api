@@ -23,6 +23,7 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.modelmapper:modelmapper:2.3.6'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
@@ -34,13 +35,18 @@ dependencies {
 	implementation "org.springdoc:springdoc-openapi-core:1.1.49"
 	implementation "org.springdoc:springdoc-openapi-ui:1.1.49"
 
-	implementation "com.github.javafaker:javafaker:0.18"
+//	implementation "com.github.javafaker:javafaker:0.18"
 
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor('org.hibernate:hibernate-jpamodelgen:5.4.11.Final')
+
+	testImplementation("org.assertj:assertj-core:3.15.0")
+	testRuntimeOnly 'com.h2database:h2'
+	testCompile("com.github.database-rider:rider-spring:1.10.0")
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
@@ -49,3 +55,5 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+//mainClassName = "com.andrelangner.marvelapi.MarvelApiApplication"

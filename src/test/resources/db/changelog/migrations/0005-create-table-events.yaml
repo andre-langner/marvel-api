@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: events
+            columns:
+              - column:
+                  name: event_id
+                  type: integer
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: next_event_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: 65cef44f-fe09-4896-8396-e02d9736bef4
+                    references: events(event_id)
+              - column:
+                  name: previous_event_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: cf7d9cd1-e10b-47df-b091-fcb744e49eef
+                    references: events(event_id)
+              - column:
+                  name: title
+                  type: varchar(255)
+              - column:
+                  name: description
+                  type: text
+              - column:
+                  name: modified
+                  type: datetime
+              - column:
+                  name: start
+                  type: datetime
+              - column:
+                  name: end
+                  type: datetime
+              - column:
+                  name: thumbnail_path
+                  type: text
+              - column:
+                  name: thumbnail_extension
+                  type: varchar(3)

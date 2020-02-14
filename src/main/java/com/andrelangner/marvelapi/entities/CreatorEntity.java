@@ -36,6 +36,6 @@ public class CreatorEntity {
   @Column(name = "thumbnail_extension", length = 3)
   private String thumbnailExtension;
 
-  @OneToMany(mappedBy = "story")
+  @OneToMany(mappedBy = "story", fetch = FetchType.LAZY)
   private Set<CreatorStoryEntity> stories;
 }

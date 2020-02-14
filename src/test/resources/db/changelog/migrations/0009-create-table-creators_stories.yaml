@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 9
+      author: andre.langner
+      changes:
+        - createTable:
+            tableName: creators_stories
+            columns:
+              - column:
+                  name: creator_story_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: story_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: 459f5aba-06e4-4a02-9672-b1067e6412b7
+                    references: stories(story_id)
+              - column:
+                  name: creator_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: fe734525-2165-445c-a7fa-a6285df93832
+                    references: creators(creator_id)
+              - column:
+                  name: role
+                  type: varchar(100)

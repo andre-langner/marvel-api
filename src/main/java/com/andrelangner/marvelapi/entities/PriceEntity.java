@@ -16,7 +16,7 @@ public class PriceEntity {
   @Column(name = "price_id")
   private UUID id;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "comic_id")
   private ComicEntity comic;
 
